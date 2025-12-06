@@ -23,8 +23,11 @@ const generateTodo = (data) => {
     onToggleCompleted: (isCompleted) => {
       todoCounter.updateCompleted(isCompleted);
     },
-    onDelete: () => {
-      todoCounter.updateTotal();
+    onDelete: (isCompleted) => {
+      todoCounter.updateTotal(false);
+      if (isCompleted) {
+        todoCounter.updateCompleted(false);
+      }
     },
   };
   const todo = new Todo(data, "#todo-template", callbacks);

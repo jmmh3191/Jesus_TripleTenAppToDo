@@ -33,4 +33,4 @@ Project Structure:
 
 This project is deployed on GitHub Pages:
 
-(https://github.com/jmmh3191/Jesus_TripleTenAppToDo.git)
+[(https://github.com/jmmh3191/Jesus_TripleTenAppToDo.git)](https://jmmh3191.github.io/Jesus_TripleTenAppToDo/)
