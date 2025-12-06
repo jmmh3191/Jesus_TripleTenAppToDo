@@ -61,7 +61,6 @@ function handleFormSubmit(inputValues) {
   const todo = generateTodo(values);
   section.addItem(todo);
   addTodoPopup.close();
-  newTodoValidator.resetValidation();
 }
 
 const newTodoValidator = new FormValidator(
