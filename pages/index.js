@@ -31,7 +31,7 @@ const generateTodo = (data) => {
     },
   };
   const todo = new Todo(data, "#todo-template", callbacks);
-  const todoElement = todo.getView(callbacks);
+  const todoElement = todo.getView();
   return todoElement;
 };
 
