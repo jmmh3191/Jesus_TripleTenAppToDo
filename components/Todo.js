@@ -30,24 +30,24 @@ class Todo {
     }
   }
 
-  _setEventListeners(callbacks) {
+  _setEventListeners() {
     this._todoCheckboxEl.addEventListener("click", () => {
       this._data.completed = !this._data.completed;
-      callbacks.onToggleCompleted(this._data.completed);
+      this._onToggleCompleted(this._data.completed);
     });
 
     this._todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
     this._todoDeleteBtn.addEventListener("click", () => {
       this._todoElement.remove();
       if (this._data.completed) {
-        callbacks.onDelete(true);
+        this._onDelete(true);
       } else {
-        callbacks.onDelete(false);
+        this._onDelete(false);
       }
     });
   }
 
-  getView(callbacks) {
+  getView() {
     this._todoElement = this._templateElement.content
       .querySelector(".todo")
       .cloneNode(true);
@@ -58,7 +58,7 @@ class Todo {
 
     this._generateCheckboxEl();
     this._generateTodoDateEl();
-    this._setEventListeners(callbacks);
+    this._setEventListeners();
 
     return this._todoElement;
   }
